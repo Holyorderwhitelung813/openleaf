@@ -36,22 +36,31 @@
 ### Configure your LLM and API keys
 ![Options page](promo/slide-5.png)
 
-## Install from Chrome Web Store
+## Install
 
+### Option 1: Chrome Web Store
 [Link coming soon]
 
-## Setup (from source)
+### Option 2: Download ZIP (no npm needed)
+1. Download [`openleaf-extension-v0.1.0.zip`](https://github.com/demfier/openleaf/releases/download/v0.1.0/openleaf-extension-v0.1.0.zip) from [Releases](https://github.com/demfier/openleaf/releases)
+2. Unzip it
+3. Go to `chrome://extensions`
+4. Enable **Developer mode** (top right)
+5. Click **Load unpacked**
+6. Select the unzipped folder
 
+### Option 3: From source
 ```bash
+git clone https://github.com/demfier/openleaf.git
+cd openleaf
 npm install
 npm run build
 ```
-
-Then load the extension in Chrome:
+Then load in Chrome:
 1. Go to `chrome://extensions`
 2. Enable **Developer mode**
 3. Click **Load unpacked**
-4. Select the `openleaf` folder (the root, not `dist/`)
+4. Select the `openleaf` folder
 
 ## Configuration
 
