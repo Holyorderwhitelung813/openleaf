@@ -93,29 +93,6 @@ npm run dev    # build with watch mode
 
 After changing code, go to `chrome://extensions` and click the reload button on the extension.
 
-## Architecture
-
-```
-Content Script (overleaf.com/project/*)
-  ├── Reads editor text via CodeMirror 6 (page bridge)
-  ├── Injects sidebar panel UI (Citations + Review tabs)
-  ├── Writes BibTeX to .bib file via editor
-  └── Caches results per project in chrome.storage.local
-
-Background Service Worker
-  ├── Citation search pipeline:
-  │   ├── Semantic Scholar, OpenAlex, Serper APIs
-  │   ├── Deduplication (arXiv ID > DOI > title)
-  │   └── LLM ranking (score 0-100 with reasoning)
-  ├── Paper review (streamed):
-  │   ├── Friendly mode — constructive mentor
-  │   └── Fire mode — reviewer #2
-  └── Keep-alive for long-running LLM calls
-
-Options Page
-  └── API keys + LLM backend config (chrome.storage.sync)
-```
-
 ## Privacy
 
 See [PRIVACY.md](PRIVACY.md). TL;DR: No data collection, no analytics, no accounts. Everything stays in your browser.
