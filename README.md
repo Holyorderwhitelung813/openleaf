@@ -6,6 +6,10 @@
 <p align="center"><strong>AI-powered citation search & paper review for Overleaf</strong></p>
 <p align="center">Find relevant papers to cite and get feedback on your writing, without leaving the editor.</p>
 
+<p align="center">
+  <img src="promo/demo.gif" alt="OpenLeaf Demo" width="100%">
+</p>
+
 ## How it works
 
 1. Open any project on overleaf.com
@@ -47,7 +51,7 @@ Then load the extension in Chrome:
 1. Go to `chrome://extensions`
 2. Enable **Developer mode**
 3. Click **Load unpacked**
-4. Select the `openleaf-extension` folder (the root, not `dist/`)
+4. Select the `openleaf` folder (the root, not `dist/`)
 
 ## Configuration
 
