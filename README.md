@@ -73,6 +73,11 @@ Works with any OpenAI-compatible API:
 | Backend | Base URL | API Key? |
 |---------|----------|----------|
 | Ollama (default) | `http://localhost:11434/v1` | No |
+| vLLM | `http://your-server:8000/v1` | Optional |
+| OpenAI | `https://api.openai.com/v1` | Yes |
+| OpenRouter | `https://openrouter.ai/api/v1` | Yes |
+| Together | `https://api.together.xyz/v1` | Yes |
+| Groq | `https://api.groq.com/openai/v1` | Yes |
 
 > **Ollama on Mac/Linux:** By default, Ollama blocks requests from browser extensions. You need to allow Chrome extension origins before starting Ollama:
 > ```bash
@@ -83,11 +88,6 @@ Works with any OpenAI-compatible API:
 > launchctl setenv OLLAMA_ORIGINS "chrome-extension://*"
 > ```
 > Then restart Ollama. Without this, the reviewer will return a 403 error.
-| vLLM | `http://your-server:8000/v1` | Optional |
-| OpenAI | `https://api.openai.com/v1` | Yes |
-| OpenRouter | `https://openrouter.ai/api/v1` | Yes |
-| Together | `https://api.together.xyz/v1` | Yes |
-| Groq | `https://api.groq.com/openai/v1` | Yes |
 
 ### Paper Search APIs
 
