@@ -116,11 +116,8 @@ async function rankBatch(
   const data = await resp.json()
   const content = data?.choices?.[0]?.message?.content || ''
 
-  console.warn('[OpenLeaf] LLM raw response:', content)
-
   // Remap paper_0..N indices back to global indices
   const batchMap = parseResponse(content)
-  console.warn('[OpenLeaf] Parsed entries:', batchMap.size)
   const globalMap = new Map<string, { score: number; forArg: string; againstArg: string }>()
   for (const [key, val] of batchMap) {
     const localIdx = parseInt(key.replace('paper_', ''), 10)
