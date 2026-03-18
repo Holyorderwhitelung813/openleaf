@@ -8,6 +8,7 @@ export interface Paper {
   arxivId: string | null
   openAlexId: string | null
   url: string | null
+  venue: string | null
   source: 'semantic_scholar' | 'openalex' | 'serper'
   relevanceScore: number
 }

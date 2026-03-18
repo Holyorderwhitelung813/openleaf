@@ -6,7 +6,7 @@ export async function searchSemanticScholar(
   query: string,
   settings: ExtensionSettings
 ): Promise<Paper[]> {
-  const fields = 'title,authors,year,abstract,citationCount,externalIds,url'
+  const fields = 'title,authors,year,abstract,citationCount,externalIds,url,venue,publicationVenue'
   const url = `https://api.semanticscholar.org/graph/v1/paper/search?query=${encodeURIComponent(query)}&fields=${fields}&limit=${settings.maxResultsPerSource}`
 
   const headers: Record<string, string> = {}
@@ -33,6 +33,7 @@ export async function searchSemanticScholar(
       arxivId: p.externalIds?.ArXiv || null,
       openAlexId: null,
       url: p.url || null,
+      venue: p.publicationVenue?.name || p.venue || null,
       source: 'semantic_scholar' as const,
       relevanceScore: 1 - i / Math.max(data.data.length, 1),
     }))
@@ -60,7 +61,7 @@ export async function searchOpenAlex(
   query: string,
   settings: ExtensionSettings
 ): Promise<Paper[]> {
-  const url = `https://api.openalex.org/works?search=${encodeURIComponent(query)}&sort=relevance_score:desc&per_page=${settings.maxResultsPerSource}&select=id,doi,title,authorships,publication_year,cited_by_count,abstract_inverted_index,ids`
+  const url = `https://api.openalex.org/works?search=${encodeURIComponent(query)}&sort=relevance_score:desc&per_page=${settings.maxResultsPerSource}&select=id,doi,title,authorships,publication_year,cited_by_count,abstract_inverted_index,ids,primary_location,type`
 
   const headers: Record<string, string> = {}
   if (settings.openAlexEmail) {
@@ -87,7 +88,8 @@ export async function searchOpenAlex(
       doi: w.doi ? w.doi.replace('https://doi.org/', '') : null,
       arxivId: null,
       openAlexId: w.id || null,
-      url: w.id || null,
+      url: w.doi ? `https://doi.org/${w.doi.replace('https://doi.org/', '')}` : null,
+      venue: w.primary_location?.source?.display_name || null,
       source: 'openalex' as const,
       relevanceScore: 1 - i / Math.max(data.results.length, 1),
     }))
@@ -134,6 +136,7 @@ export async function searchSerper(
         arxivId,
         openAlexId: null,
         url: r.link || null,
+        venue: r.publication || null,
         source: 'serper' as const,
         relevanceScore: 1 - i / Math.max(data.organic.length, 1),
       }

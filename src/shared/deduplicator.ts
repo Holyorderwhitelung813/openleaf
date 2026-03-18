@@ -11,6 +11,7 @@ function mergeInto(target: Paper, source: Paper): void {
   if (!target.openAlexId && source.openAlexId)
     target.openAlexId = source.openAlexId
   if (!target.url && source.url) target.url = source.url
+  if (!target.venue && source.venue) target.venue = source.venue
   if ((!target.authors || target.authors.length === 0) && source.authors)
     target.authors = source.authors
   if (!target.year && source.year) target.year = source.year
